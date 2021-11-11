@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "YeniDers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni Ders Ekleme</h2><br>
+<form method ="post" style="padding:10px;">
+    <div class="form-group">
+        <label>Ders Adı</label>
+        <input type="text" name="ders_adi" class="form-control" placeholder="Ders Adı">
+    </div>
+    <div style="padding-top: 10px;">
+        <button class="btn btn-info"><i class="fas fa-plus"></i> Dersi Ekle</button>
+        <a href="/Default/Index" class="btn btn-success position-relative"><i class="fas fa-undo"></i> Geri Dön</a>
+    </div>
+</form>
+

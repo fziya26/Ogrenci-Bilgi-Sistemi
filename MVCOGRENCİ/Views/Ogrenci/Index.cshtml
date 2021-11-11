@@ -1,0 +1,60 @@
+﻿@using MVCOGRENCİ.Models.EntityFramework
+@model List<ogrenciler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>ÖĞRENCİLER</h2>
+<div id="buttons">
+    <a href="/Ogrenci/YeniOgrenci" id="add-button" class="btn btn-success position-relative">Öğrenci Ekle</a>
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            ÖĞRENCİ ID
+        </th>
+        <th>
+            ADI
+        </th>
+        <th>
+            SOYADI
+        </th>
+        <th>
+            CİNSİYET
+        </th>
+        <th>
+            KULÜP ID
+        </th>
+        <th>
+            İŞLEMLER
+        </th>
+    </tr>
+    <tbody>
+        @foreach (var ogr in Model)
+        {
+            <tr>
+                <td>
+                    @ogr.ogrenci_id
+                </td>
+                <td>
+                    @ogr.ad
+                </td>
+                <td>
+                    @ogr.soyad
+                </td>
+                <td>
+                    @ogr.cinsiyet
+                </td>
+                <td>
+                    @ogr.kulupler.kulup_adi
+                </td>
+                <td>
+                    <a href="/Ogrenci/Sil/@ogr.ogrenci_id" class="btn btn-danger">Sil</a>
+                    <a href="/Ogrenci/OgrenciDetayGetir/@ogr.ogrenci_id" class="btn btn-info">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

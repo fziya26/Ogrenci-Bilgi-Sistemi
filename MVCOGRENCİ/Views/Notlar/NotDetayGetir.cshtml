@@ -1,0 +1,50 @@
+﻿@model MVCOGRENCİ.Models.EntityFramework.notlar
+@{
+    ViewBag.Title = "NotDetayGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Not Detayı</h2>
+@using (Html.BeginForm("NotDetayGetir", "Notlar", FormMethod.Post))
+{
+
+    <div class="form-group" style="padding-top: 10px">
+        @Html.LabelFor(m => m.ogrenci_id, "Öğrenci ID")
+        @Html.TextBoxFor(m => m.ogrenci_id, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ders_id, "Ders ID")
+        @Html.TextBoxFor(m => m.ders_id, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.sinav1_notu, "1. Sınav Notu")
+        @Html.TextBoxFor(m => m.sinav1_notu, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.sinav2_notu, "2. Sınav Notu")
+        @Html.TextBoxFor(m => m.sinav2_notu, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.sinav3_notu, "3. Sınav Notu")
+        @Html.TextBoxFor(m => m.sinav3_notu, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.proje_notu, "Proje Notu")
+        @Html.TextBoxFor(m => m.proje_notu, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ortalama, "Ortalama")
+        @Html.TextBoxFor(m => m.ortalama, new { @Value=ViewBag.ortalama, @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.durum, "Durum")
+        @Html.TextBoxFor(m => m.durum, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.not_id)
+<div style="padding-top: 10px;">
+    <button class="btn btn-danger" name="islem" value="HESAPLA"><i class="fas fa-calculator"></i> Hesapla</button>
+    <button class="btn btn-info" name="islem" value="GUNCELLE"><i class="fas fa-edit"></i> Güncelle</button>
+    <a href="/Notlar/Index" class="btn btn-success position-relative"><i class="fas fa-undo"></i> Geri Dön</a>
+</div>
+}
+

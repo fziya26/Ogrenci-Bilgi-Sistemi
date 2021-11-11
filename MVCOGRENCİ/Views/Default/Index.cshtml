@@ -1,0 +1,34 @@
+﻿@using MVCOGRENCİ.Models.EntityFramework
+@model List<dersler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>DERSLER</h2>
+<div id="buttons">
+    <a href="/Default/YeniDers" id="add-button" class="btn btn-success position-relative">Ders Ekle</a>
+</div>
+<div>
+    <table class="table table-bordered position-relative">
+        <tr>
+            <th>DERS ID</th>
+            <th>DERS ADI</th>
+            <th>İŞLEMLER</th>
+        </tr>
+        <tbody>
+            @foreach (var drs in Model)
+            {
+                <tr>
+                    <td>@drs.ders_id</td>
+                    <td>@drs.ders_adi</td>
+                    <td>
+                        <a href="/Default/Sil/@drs.ders_id" class="btn btn-danger ">Sil</a>
+                        <a href="/Default/DersDetayGetir/@drs.ders_id" class="btn btn-info">Güncelle</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+

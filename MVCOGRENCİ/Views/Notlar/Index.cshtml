@@ -1,0 +1,94 @@
+﻿@using MVCOGRENCİ.Models.EntityFramework
+@model List<notlar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>NOTLAR</h2>
+<div id="buttons">
+    <a href="/Notlar/YeniSinav" id="add-button" class="btn btn-success position-relative">Sınav Ekle</a>
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            NOT ID
+        </th>
+        <th>
+            DERS ID
+        </th>
+        <th>
+            ÖĞRENCİ ID
+        </th>
+        <th>
+            1. SINAV NOTU
+        </th>
+        <th>
+            2. SINAV NOTU
+        </th>
+        <th>
+            3. SINAV NOTU
+        </th>
+        <th>
+            PROJE NOTU
+        </th>
+        <th>
+            ORTALAMA
+        </th>
+        <th>
+            DURUM
+        </th>
+        <th>
+            İŞLEMLER
+        </th>
+    </tr>
+    <tbody>
+
+        @foreach (var not in Model)
+        {
+            <tr>
+                <td>
+                    @not.not_id
+                </td>
+                <td>
+                    @not.ders_id
+                </td>
+                <td>
+                    @not.ogrenci_id
+                </td>
+                <td>
+                    @not.sinav1_notu
+                </td>
+                <td>
+                    @not.sinav2_notu
+                </td>
+                <td>
+                    @not.sinav3_notu
+                </td>
+                <td>
+                    @not.proje_notu
+                </td>
+                <td>
+                    @not.ortalama
+                </td>
+                @if (not.durum == true)
+                {
+                    <td>
+                        GEÇTİ
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        KALDI
+                    </td>
+                }
+                <td>
+                    <a href="/Notlar/Sil/@not.not_id" class="btn btn-danger">Sil</a>
+                    <a href="/Notlar/NotDetayGetir/@not.not_id" class="btn btn-info">Güncelle</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,38 @@
+﻿@model MVCOGRENCİ.Models.EntityFramework.ogrenciler
+@{
+    ViewBag.Title = "OgrenciDetayGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Öğrenci Detayı</h2>
+@using (Html.BeginForm("Guncelle", "Ogrenci", FormMethod.Post))
+{
+
+    <div class="form-group" style="padding-top: 10px">
+        @Html.LabelFor(m => m.ad, "Adı")
+        @Html.TextBoxFor(m => m.ad, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.soyad, "Soyadı")
+        @Html.TextBoxFor(m => m.soyad, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.kulup, "Kulüp")<br />
+        @Html.DropDownListFor(m => m.kulupler.kulup_id, (List<SelectListItem>)ViewBag.kulupler, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.cinsiyet, "Cinsiyet")
+        <br>
+        @Html.RadioButtonFor(m => m.cinsiyet, "Kadın", new { @class = "radio" })
+        <label>Kadın</label>
+        <br>
+        @Html.RadioButtonFor(m => m.cinsiyet, "Erkek", new { @class = "radio" })
+        <label> Erkek </label>
+    </div>
+    @Html.HiddenFor(m => m.ogrenci_id)
+    @Html.HiddenFor(m => m.kulupler.kulup_id);
+    <div style="padding-top: 10px;">
+        <button class="btn btn-info"><i class="fas fa-edit"></i> Güncelle</button>
+        <a href="/Ogrenci/Index" class="btn btn-success position-relative"><i class="fas fa-undo"></i> Geri Dön</a>
+    </div>
+}

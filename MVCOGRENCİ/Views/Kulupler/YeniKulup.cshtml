@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "YeniKulup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni Kulüp Ekleme</h2>
+<br>
+<form method="post" style="padding:10px;">
+    <div class="form-group">
+        <label>Kulüp Adı</label>
+        <input type="text" name="kulup_adi" class="form-control" placeholder="Kulüp Adı">
+    </div>
+    <div class="form-group">
+        <label>Kulüp Kontejyanı</label>
+        <input type="text" name="kulup_kontenjan" class="form-control" placeholder="Kontenjan Sayısı">
+    </div>
+    <div style="padding-top: 10px;">
+        <button class="btn btn-info"><i class="fas fa-plus"></i> Kulübü Ekle</button>
+        <a href="/Kulupler/Index" class="btn btn-success position-relative"><i class="fas fa-undo"></i> Geri Dön</a>
+    </div>
+</form>
+

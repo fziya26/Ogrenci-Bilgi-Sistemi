@@ -1,0 +1,21 @@
+﻿@model MVCOGRENCİ.Models.EntityFramework.dersler
+@{
+    ViewBag.Title = "DersDetayGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ders Detayları</h2>
+@using (Html.BeginForm("Guncelle", "Default", FormMethod.Post))
+{
+
+    <div class="form-group" style="padding-top: 10px">
+        @Html.LabelFor(m => m.ders_adi, "Ders Adı")
+        @Html.TextBoxFor(m => m.ders_adi, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.ders_id)
+    <div style="padding-top: 10px;">
+        <button class="btn btn-info"><i class="fas fa-edit"></i> Güncelle</button>
+        <a href="/Default/Index" class="btn btn-success position-relative"><i class="fas fa-undo"></i> Geri Dön</a>
+    </div>
+}
+

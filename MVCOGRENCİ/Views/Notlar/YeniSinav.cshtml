@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "YeniSinav";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Yeni Sınav Ekle</h2>
+<br>
+<form method="post" style="padding:10px;">
+    <div class="form-group">
+        <label>Öğrenci Id</label>
+        <input type="text" name="ogrenci_id" class="form-control" placeholder="Öğrencinin IDsi">
+    </div>
+    <div class="form-group">
+        <label>Ders Id</label>
+        <input type="text" name="ders_id" class="form-control" placeholder="Dersin Adı">
+    </div>
+    <div class="form-group">
+        <label>Sınav 1</label>
+        <input type="text" name="sinav1_notu" class="form-control" placeholder="1. Sınav Notu">
+    </div>
+    <div class="form-group">
+        <label>Sınav 2</label>
+        <input type="text" name="sinav2_notu" class="form-control" placeholder="2. Sınav Notu">
+    </div>
+    <div class="form-group">
+        <label>Sınav 3</label>
+        <input type="text" name="sinav3_notu" class="form-control" placeholder="3. Sınav Notu">
+    </div>
+    <div class="form-group">
+        <label>Proje</label>
+        <input type="text" name="proje_notu" class="form-control" placeholder="Proje Notu">
+    </div>
+    <div class="form-group">
+        <label>Ortalama</label>
+        <input type="text" name="ortalama" class="form-control" placeholder="Öğrencinin Ortalaması">
+    </div>
+    <div class="form-group">
+        <label>Durum</label>
+        <input type="text" name="durum" class="form-control" placeholder="Öğrencinin Durumu">
+    </div>
+    <div style="padding-top: 10px;">
+        <button class="btn btn-info"><i class="fas fa-plus"></i> Sınavı Ekle</button>
+        <a href="/Notlar/Index" class="btn btn-success position-relative"><i class="fas fa-undo"></i> Geri Dön</a>
+    </div>
+</form>

@@ -1,0 +1,34 @@
+﻿@model MVCOGRENCİ.Models.EntityFramework.ogrenciler
+@{
+    ViewBag.Title = "YeniOgrenci";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni Öğrenci Ekleme</h2>
+<br>
+<form method="post" style="padding:10px;">
+    <div class="form-group">
+        <label>Ad</label>
+        <input type="text" name="ad" class="form-control" placeholder="Öğrencinin Adı">
+    </div>
+    <div class="form-group">
+        <label>Soyad</label>
+        <input type="text" name="soyad" class="form-control" placeholder="Öğrencinin Soyadı">
+    </div>
+    <div class="form-group">
+        <label>Kulüp</label>
+        @Html.DropDownListFor(m => m.kulupler.kulup_id, (List<SelectListItem>)ViewBag.kulupler, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Cinsiyet</label><br />
+        <input type="radio" name="cinsiyet" value="Kadın" class="radio" checked="checked">
+        <label>Kadın</label>
+        <input type="radio" name="cinsiyet" value="Erkek" class="radio">
+        <label>Erkek</label><br>
+    </div>
+    <div style="padding-top: 10px;">
+        <button class="btn btn-info"><i class="fas fa-plus"></i> Öğrenciyi Ekle</button>
+        <a href="/Default/Index" class="btn btn-success position-relative"><i class="fas fa-undo"></i> Geri Dön</a>
+    </div>
+</form>
+

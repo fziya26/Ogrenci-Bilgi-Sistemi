@@ -1,0 +1,47 @@
+﻿@using MVCOGRENCİ.Models.EntityFramework
+@model List<kulupler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>KULÜPLER</h2>
+<div id="buttons">
+    <a href="/Kulupler/YeniKulup" id="add-button" class="btn btn-success position-relative">Kulüp Ekle</a>
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            KULÜP ID
+        </th>
+        <th>
+            KULÜP ADI
+        </th>
+        <th>
+            KULÜP KONTENJANI
+        </th>
+        <th>
+            İŞLEMLER
+        </th>
+    </tr>
+    <tbody>
+        @foreach (var klp in Model)
+        {
+            <tr>
+                <td>
+                    @klp.kulup_id
+                </td>
+                <td>
+                    @klp.kulup_adi
+                </td>
+                <td>
+                    @klp.kulup_kontenjan
+                </td>
+                <td>
+                    <a href="/Kulupler/Sil/@klp.kulup_id" class="btn btn-danger">Sil</a>
+                    <a href="/Kulupler/KulupDetayGetir/@klp.kulup_id" class="btn btn-info">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
